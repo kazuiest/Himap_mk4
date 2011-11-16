@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1><%= @title %></h1>
+<% if user_signed_in? %>
+	<%= form_for @tweet do |f| -%>
+	<%= f.text_area :content, :size => "60x3" %><br />
+	<%= f.text_field :ratitude %><br />
+	<%= f.text_field :longitude %><br />
+	<%= f.text_field :rate %><br />
+	<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+	<% end %>
+<% end %>
+
+<% @tweets.each do |tweet| %>
+<div id="tweet">
+	<hr />
+	<span style="font-weight:bold;">
+		<%= tweet.user.email %>
+	</span>
+	<br />
+	<%= tweet.content %>
+	<br />
+	<%= link_to "delete", tweet, :method => :delete, :confirm => "are you sure?" %>
+	(<%= distance_of_time_in_words_to_now(tweet.created_at) %>ago)
+</div>
+<% end %>
+

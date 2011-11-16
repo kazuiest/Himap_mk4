@@ -1,4 +1,6 @@
 HimapMk4::Application.routes.draw do
+  resources :tweets, :only => [:create, :destroy]
+
 devise_for :users
 
   root :to => "pages#home"

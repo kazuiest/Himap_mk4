@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  content: MyString
+  ratitude: 9.99
+  longitude: 9.99
+  rate: MyString
+
+two:
+  user_id: 1
+  content: MyString
+  ratitude: 9.99
+  longitude: 9.99
+  rate: MyString
