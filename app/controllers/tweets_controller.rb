@@ -18,8 +18,14 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @tweet }
+       format.xml{
+        render :text => @tweet.to_xml(:only => [:latitude,:longitude,:title,:description],:root => "data")
+      }
     end
+  end
+  
+  def show_with_map
+    @tweet = Tweet.find(params[:id])
   end
 
   # GET /tweets/new

@@ -25,7 +25,7 @@
   </tr>
 <% end %>
 </table>
-
+<%= render(:partial => 'map',:locals => {:data => "/incidents.xml"}) %>
 <br />
 
 <%= link_to 'New Tweet', new_tweet_path %>

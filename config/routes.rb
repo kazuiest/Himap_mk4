@@ -1,4 +1,5 @@
 HimapMk4::Application.routes.draw do
+  get 'tweets/map/:id', :action => 'show_with_map', :controller => 'tweets'
   resources :tweets, :only => [:create, :destroy]
 
 devise_for :users
@@ -10,6 +11,8 @@ devise_for :users
   get "about" => "pages#about"
 
   get "help" => "pages#help"
+  
+  
   
   
 
