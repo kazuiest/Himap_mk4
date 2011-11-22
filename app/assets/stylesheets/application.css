@@ -5,3 +5,12 @@
  *= require_self
  *= require_tree . 
 */
+#map_canvas {
+	float:left;
+	}
+#tweet{
+	background-color:#ffdddd;
+	display:block;
+	width:330px;
+	float:left;
+}

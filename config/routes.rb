@@ -12,6 +12,8 @@ devise_for :users
 
   get "help" => "pages#help"
   
+  get "map" => "tweets#map"
+  
   
   
   

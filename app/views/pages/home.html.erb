@@ -1,4 +1,4 @@
-<h1><%= @title %></h1>
+
 	<% if user_signed_in? %>
 		<%= form_for @tweet do |f| -%>
 		<%= f.text_area :content, :size => "60x3" %><br />
@@ -8,9 +8,12 @@
 		<%= f.submit "Submit", :disable_with => 'Submiting...' %>
 	<% end %>
 <% end %>
-here is map
-<% @tweets.each do |tweet| %>
+
+<div id="map_canvas" style="width:1000px; height:430px"></div>
+
 	<div id="tweet">
+<% @tweets.each do |tweet| %>
+
 		<hr />
 		<span style="font-weight:bold;">
 			<%= tweet.user.email %>
@@ -20,6 +23,8 @@ here is map
 		<br />
 		<%= link_to "delete", tweet, :method => :delete, :confirm => "are you sure?" %>
 	(<%= distance_of_time_in_words_to_now(tweet.created_at) %>ago)
-	</div>
+	
+
 <% end %>
+</div>
 
